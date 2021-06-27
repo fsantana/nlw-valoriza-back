@@ -1,9 +1,8 @@
 import { Request, Response } from "express";
-import { ListTagService } from "../services/ListTagService";
+import { ListTagService } from "../../services/tag/ListTagService";
 
 class ListTagController {
   async handle(request: Request, response: Response) {
-    const { name } = request.body
 
     const listTagService = new ListTagService();
 

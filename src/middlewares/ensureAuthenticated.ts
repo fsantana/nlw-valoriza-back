@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express"
-import {verify} from "jsonwebtoken"
-
+import { verify } from "jsonwebtoken"
+import appConfig from "../config/AppConfig"
 interface IPayload {
   sub: string;
 }
@@ -14,7 +14,7 @@ export function ensureAuthenticated(request: Request, response: Response, next: 
     }
 
     const [, token] = authToken.split(" ");
-    const { sub } = verify(token, "a730a503ab203845934bc003ee992b61") as IPayload;
+    const { sub } = verify(token, appConfig.jwtSalt) as IPayload;
     request.user_id = sub;
     return next();
 

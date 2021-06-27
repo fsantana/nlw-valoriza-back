@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm";
-import { TagsRepositories } from "../repositories/TagsRepositories";
+import { TagsRepositories } from "../../repositories/TagsRepositories";
 import { classToPlain } from "class-transformer"
 
 class ListTagService {

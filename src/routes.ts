@@ -1,14 +1,14 @@
 import { Router } from "express";
 import { ensureAdmin } from "./middlewares/ensureAdmin";
 import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
-import { AuthenticateUserController } from "./controllers/AuthenticateUserController";
-import { CreateUserController } from "./controllers/CreateUserController";
-import { ListUserController } from "./controllers/ListUserController";
-import { CreateTagController } from "./controllers/CreateTagController";
-import { ListTagController } from "./controllers/ListTagController";
-import { CreateComplimentController } from "./controllers/CreateComplimentController";
-import { ListUserSendComplimentsController } from "./controllers/ListUserSendComplimentsController";
-import { ListUserReceiveComplimentsController } from "./controllers/ListUserReceiveComplimentsController";
+import { AuthenticateUserController } from "./controllers/auth/AuthenticateUserController";
+import { CreateUserController } from "./controllers/user/CreateUserController";
+import { ListUserController } from "./controllers/user/ListUserController";
+import { CreateTagController } from "./controllers/tag/CreateTagController";
+import { ListTagController } from "./controllers/tag/ListTagController";
+import { CreateComplimentController } from "./controllers/compliment/CreateComplimentController";
+import { ListUserSendComplimentsController } from "./controllers/compliment/ListUserSendComplimentsController";
+import { ListUserReceiveComplimentsController } from "./controllers/compliment/ListUserReceiveComplimentsController";
 
 const router = Router()
 

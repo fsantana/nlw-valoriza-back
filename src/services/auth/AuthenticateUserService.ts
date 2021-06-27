@@ -1,7 +1,8 @@
 import { compare } from "bcryptjs"
 import { sign } from "jsonwebtoken"
 import { getCustomRepository } from "typeorm"
-import { UsersRepositories } from "../repositories/UsersRepositories"
+import { UsersRepositories } from "../../repositories/UsersRepositories"
+import appConfig from "../../config/AppConfig"
 
 interface IAuthenticateRequest {
   email: string;
@@ -21,7 +22,7 @@ class AuthenticateUserService {
 
     const token = sign({
       email: user.email
-    }, "a730a503ab203845934bc003ee992b61",
+    }, appConfig.jwtSalt,
       {
         subject: user.id,
         expiresIn: "1d"
